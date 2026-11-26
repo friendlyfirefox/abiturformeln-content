@@ -1,1 +1,112 @@
-
+{
+  "schemaVersion": 1,
+  "version": "2026.11",
+  "updatedAt": "2026-11-19",
+  "notes": "Inhalte der Abitur-Formelsammlung. Alles steckt in dieser einen Datei – neue Formeln, Fächer oder Kategorien einfach hier ergänzen und in der App auf Inhalte aktualisieren tippen.",
+  "packs": [
+    {
+      "id": "mathematik-extra",
+      "title": "Mathematik – Ergänzungen",
+      "subject": "Mathematik",
+      "version": "2026.11",
+      "notes": [
+        {
+          "title": "GK und LK",
+          "text": "Alle Formeln gelten für Grund- und Leistungskurs; LK-Themen sind im Titel gekennzeichnet."
+        }
+      ],
+      "formulas": [
+        {
+          "id": "satz-des-thales",
+          "title": "Satz des Thales",
+          "category": "geometry",
+          "topic": "Trigonometrie",
+          "expression": "∠ACB = 90°  ⇔  C auf dem Thaleskreis über AB",
+          "explanation": "Liegt C auf dem Kreis mit Durchmesser AB, ist der Winkel bei C immer ein rechter Winkel.",
+          "variables": [
+            { "symbol": "A, B", "name": "Endpunkte des Durchmessers" },
+            { "symbol": "C", "name": "Punkt auf dem Kreis" }
+          ],
+          "example": "AB = 6 cm ⇒ Thaleskreis mit r = 3 cm",
+          "steps": [
+            { "title": "Mittelpunkt", "detail": "M in der Mitte von AB." },
+            { "title": "Kreis", "detail": "Kreis um M mit r = |AB|/2." },
+            { "title": "Winkel", "detail": "Jeder Punkt C auf dem Kreis ergibt 90°." }
+          ],
+          "keywords": ["Thales", "rechtwinklig", "Halbkreis"]
+        },
+        {
+          "id": "grenzwerte",
+          "title": "Grenzwerte (Limes)",
+          "category": "analysis",
+          "topic": "Grenzwerte & Asymptoten",
+          "expression": "lim (x→∞) f(x)   ·   lim (x→x₀) f(x)",
+          "explanation": "Beschreibt, welchem Wert sich f annähert – im Unendlichen oder nahe einer Stelle x₀.",
+          "variables": [
+            { "symbol": "x", "name": "Laufvariable" },
+            { "symbol": "x₀", "name": "betrachtete Stelle" }
+          ],
+          "example": "f(x) = (3x² + 1)/(x² − 4) ⇒ lim (x→∞) f(x) = 3",
+          "details": [
+            {
+              "title": "Regel für Brüche",
+              "detail": "Zählergrad < Nennergrad ⇒ 0; gleich ⇒ Quotient der Leitkoeffizienten; größer ⇒ kein endlicher Grenzwert."
+            }
+          ],
+          "keywords": ["Limes", "Grenzwert", "Unendlich"]
+        },
+        {
+          "id": "asymptoten",
+          "title": "Asymptoten",
+          "category": "analysis",
+          "topic": "Grenzwerte & Asymptoten",
+          "expression": "senkrecht: Nenner = 0 ∧ Zähler ≠ 0   ·   waagerecht: y = lim (x→±∞) f(x)",
+          "explanation": "Polstellen zeigen senkrechte Asymptoten; der Grenzwert im Unendlichen liefert die waagerechte.",
+          "example": "f(x) = 1/(x − 2) ⇒ senkrecht x = 2, waagerecht y = 0",
+          "keywords": ["Asymptote", "Polstelle", "Definitionslücke"]
+        },
+        {
+          "id": "prozentuale-veraenderung",
+          "title": "Prozentuale Veränderung",
+          "category": "basics",
+          "topic": "Prozent & Zinsen",
+          "expression": "neuer Wert = alter Wert · (1 ± p/100)",
+          "explanation": "Zunahme um p % ist der Faktor (1 + p/100), Abnahme (1 − p/100). Mehrere Änderungen werden multipliziert.",
+          "variables": [
+            { "symbol": "p", "name": "Prozentsatz" }
+          ],
+          "example": "200 € + 15 % = 230 €; danach −15 % = 195,50 €",
+          "calculator": "prozentwert",
+          "keywords": ["Prozent", "Wachstumsfaktor", "Rabatt"]
+        },
+        {
+          "id": "rotationskoerper",
+          "title": "Volumen eines Rotationskörpers (LK)",
+          "category": "analysis",
+          "topic": "Integration",
+          "expression": "V = π · ∫ₐᵇ ( f(x) )² dx",
+          "explanation": "Rotiert der Graph von f um die x-Achse, ergibt das Integral des Quadrats das Volumen.",
+          "variables": [
+            { "symbol": "f", "name": "Randfunktion" },
+            { "symbol": "a, b", "name": "Integrationsgrenzen" }
+          ],
+          "example": "f(x) = x auf [0, 2] ⇒ V = 8π/3",
+          "keywords": ["Rotationskörper", "Volumen", "LK"]
+        },
+        {
+          "id": "aehnlichkeit",
+          "title": "Ähnliche Dreiecke",
+          "category": "geometry",
+          "topic": "Trigonometrie",
+          "expression": "a′ / a = b′ / b = c′ / c = k",
+          "explanation": "Gleiche Winkel ⇒ gleiche Seitenverhältnisse; Flächen wachsen mit k².",
+          "variables": [
+            { "symbol": "k", "name": "Ähnlichkeitsfaktor" }
+          ],
+          "example": "k = 2 ⇒ Seiten doppelt, Fläche viermal so groß",
+          "keywords": ["ähnlich", "Strahlensatz", "Faktor"]
+        }
+      ]
+    }
+  ]
+}
