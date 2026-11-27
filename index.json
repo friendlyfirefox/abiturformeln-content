@@ -404,6 +404,67 @@
           "keywords": ["Varianz", "Stichprobe", "Streuung", "s²", "Statistik"]
         }
       ]
+    },
+    {
+      "id": "physik-grundlagen",
+      "title": "Physik – Grundlagen",
+      "subject": "Physik",
+      "version": "2026.11",
+      "notes": [
+        {
+          "title": "Beispiel-Fach",
+          "text": "Zweites Fach als Beispiel: eigenes Pack mit eigener Kategorie – so erweitert man das Manifest um weitere Fächer."
+        }
+      ],
+      "categories": [
+        { "id": "physik", "title": "Physik", "subtitle": "Mechanik", "symbol": "atom", "colorIndex": 4 }
+      ],
+      "formulas": [
+        {
+          "id": "kraft-masse-beschleunigung",
+          "title": "Kraft, Masse und Beschleunigung",
+          "category": "physik",
+          "topic": "Dynamik",
+          "expression": "F = m · a",
+          "explanation": "Die auf einen Körper wirkende Kraft ist gleich dem Produkt aus Masse und Beschleunigung; die Beschleunigung zeigt in Richtung der Kraft.",
+          "variables": [
+            { "symbol": "F", "name": "Kraft in N" },
+            { "symbol": "m", "name": "Masse in kg" },
+            { "symbol": "a", "name": "Beschleunigung in m/s²" }
+          ],
+          "example": "m = 2 kg, a = 3 m/s² ⇒ F = 6 N",
+          "keywords": ["Newton", "Kraft", "Beschleunigung", "Mechanik"]
+        },
+        {
+          "id": "gleichmaessige-beschleunigung",
+          "title": "Gleichmäßig beschleunigte Bewegung",
+          "category": "physik",
+          "topic": "Kinematik",
+          "expression": "v(t) = v₀ + a · t   ·   s(t) = v₀ · t + (a/2) · t²",
+          "explanation": "Bei konstanter Beschleunigung wächst die Geschwindigkeit linear mit der Zeit; der zurückgelegte Weg ist eine quadratische Funktion der Zeit.",
+          "variables": [
+            { "symbol": "v₀", "name": "Anfangsgeschwindigkeit in m/s" },
+            { "symbol": "a", "name": "Beschleunigung in m/s²" },
+            { "symbol": "t", "name": "Zeit in s" }
+          ],
+          "example": "v₀ = 0, a = 2 m/s², t = 4 s ⇒ v = 8 m/s und s = 16 m",
+          "keywords": ["Kinematik", "Geschwindigkeit", "Weg", "Beschleunigung"]
+        },
+        {
+          "id": "kinetische-energie",
+          "title": "Kinetische Energie",
+          "category": "physik",
+          "topic": "Energetik",
+          "expression": "E_kin = ½ · m · v²",
+          "explanation": "Die Bewegungsenergie eines Körpers wächst mit der Masse und mit dem Quadrat der Geschwindigkeit.",
+          "variables": [
+            { "symbol": "m", "name": "Masse in kg" },
+            { "symbol": "v", "name": "Geschwindigkeit in m/s" }
+          ],
+          "example": "m = 2 kg, v = 3 m/s ⇒ E_kin = ½ · 2 · 9 = 9 J",
+          "keywords": ["Energie", "Bewegungsenergie", "Joule", "Mechanik"]
+        }
+      ]
     }
   ]
 }
