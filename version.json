@@ -1,6 +1,6 @@
 {
-  "version": "0.6",
-  "notes": "19 neue Mathematik-Formeln (Analysis, Geometrie, Stochastik), Physik als zweites Beispiel-Fach, version.json gesetzt und Schema-Doku im README ergänzt.",
+  "version": "0.9.0",
+  "notes": "Klausuren bis Klasse 13: jede Klausur hat einen kürzeren Teil A ohne Hilfsmittel und einen Teil B mit Taschenrechner. 35 geprüfte Klausuraufgaben, 51 Übungsaufgaben, Stufen 10–13. Die Inhalts-Packs (Formeln, Fächer) sind unverändert.",
   "downloadURL": "https://github.com/friendlyfirefox/Test/archive/refs/heads/main.zip",
   "repositoryURL": "https://github.com/friendlyfirefox/Test"
 }
