@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "version": "2026.11",
-  "updatedAt": "2026-11-19",
+  "updatedAt": "2026-11-27",
   "notes": "Inhalte der Abitur-Formelsammlung. Alles steckt in dieser einen Datei – neue Formeln, Fächer oder Kategorien einfach hier ergänzen und in der App auf Inhalte aktualisieren tippen.",
   "packs": [
     {
@@ -105,6 +105,364 @@
           ],
           "example": "k = 2 ⇒ Seiten doppelt, Fläche viermal so groß",
           "keywords": ["ähnlich", "Strahlensatz", "Faktor"]
+        },
+        {
+          "id": "differentialquotient",
+          "title": "Differentialquotient",
+          "category": "analysis",
+          "topic": "Ableitungen",
+          "expression": "f′(x) = lim (h → 0)  [ f(x + h) − f(x) ] / h",
+          "explanation": "Die Ableitung an der Stelle x ist der Grenzwert der mittleren Änderungsrate – also die Steigung der Tangente im Punkt (x | f(x)).",
+          "variables": [
+            { "symbol": "h", "name": "Schrittweite" },
+            { "symbol": "x", "name": "Stelle" }
+          ],
+          "example": "f(x) = x² ⇒ f′(x) = lim (h → 0) (2xh + h²)/h = 2x",
+          "steps": [
+            { "title": "Differenzenquotient", "detail": "(f(x + h) − f(x))/h aufstellen." },
+            { "title": "Vereinfachen", "detail": "Ausdruck kürzen, soweit möglich." },
+            { "title": "Grenzwert", "detail": "h → 0 setzen – das Ergebnis ist f′(x)." }
+          ],
+          "keywords": ["Ableitung", "Definition", "Grenzwert", "Steigung"]
+        },
+        {
+          "id": "stammfunktion-exponential",
+          "title": "Stammfunktion der e-Funktion",
+          "category": "analysis",
+          "topic": "Integration",
+          "expression": "∫ eˣ dx = eˣ + C",
+          "explanation": "Die e-Funktion ist ihre eigene Stammfunktion; nur die Integrationkonstante C kommt hinzu.",
+          "variables": [
+            { "symbol": "C", "name": "Integrationkonstante" }
+          ],
+          "example": "∫₀¹ eˣ dx = e¹ − e⁰ = e − 1 ≈ 1,72",
+          "keywords": ["e-Funktion", "Stammfunktion", "Integral"]
+        },
+        {
+          "id": "stammfunktion-logarithmus",
+          "title": "Stammfunktion von 1/x",
+          "category": "analysis",
+          "topic": "Integration",
+          "expression": "∫ (1/x) dx = ln|x| + C   (x ≠ 0)",
+          "explanation": "Die Ableitung von ln|x| ist 1/x – der Betrag macht die Formel auch für negative x gültig.",
+          "variables": [
+            { "symbol": "C", "name": "Integrationkonstante" }
+          ],
+          "example": "∫₁ᵉ (1/x) dx = ln(e) − ln(1) = 1",
+          "keywords": ["Logarithmus", "ln", "Stammfunktion", "Hyperbel"]
+        },
+        {
+          "id": "trapezregel",
+          "title": "Trapezregel (numerische Integration)",
+          "category": "analysis",
+          "topic": "Integration",
+          "expression": "∫ₐᵇ f(x) dx ≈ (b − a)/(2n) · [ f(a) + 2·f(x₁) + … + 2·f(xₙ₋₁) + f(b) ]",
+          "explanation": "Die Fläche wird durch n Trapeze zwischen den Stützstellen genähert; die inneren Funktionswerte zählen doppelt.",
+          "variables": [
+            { "symbol": "n", "name": "Anzahl der Teilintervalle" },
+            { "symbol": "x₁ … xₙ₋₁", "name": "innere Stützstellen" }
+          ],
+          "example": "f(x) = x² auf [0; 2] mit n = 2 ⇒ ≈ (2)/(4) · [0 + 2·1 + 4] = 3 (exakt 8/3 ≈ 2,67)",
+          "details": [
+            {
+              "title": "Genauigkeit",
+              "detail": "Mehr Teilintervalle ⇒ kleinerer Fehler; bei Messwerten oft das einzige Verfahren."
+            }
+          ],
+          "keywords": ["Trapezregel", "numerisch", "Näherung", "Integral", "LK"]
+        },
+        {
+          "id": "newton-verfahren",
+          "title": "Newton-Verfahren",
+          "category": "analysis",
+          "topic": "Numerische Verfahren",
+          "expression": "xₙ₊₁ = xₙ − f(xₙ) / f′(xₙ)   (f′(xₙ) ≠ 0)",
+          "explanation": "Die Tangente am Graphen bei xₙ wird zur x-Achse verlängert; ihr Schnittpunkt ist die bessere Näherung an die Nullstelle.",
+          "variables": [
+            { "symbol": "xₙ", "name": "bisherige Näherung" },
+            { "symbol": "f′", "name": "Ableitung von f" }
+          ],
+          "example": "f(x) = x² − 2, x₀ = 1 ⇒ x₁ = 1 − (−1)/2 = 1,5 und x₂ ≈ 1,4167 (⇒ √2 ≈ 1,4142)",
+          "steps": [
+            { "title": "Startwert", "detail": "x₀ in der Nähe der Nullstelle wählen." },
+            { "title": "Tangente", "detail": "xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ) berechnen." },
+            { "title": "Wiederholen", "detail": "Iterieren, bis |xₙ₊₁ − xₙ| klein genug ist." }
+          ],
+          "keywords": ["Newton", "Nullstelle", "Näherung", "Iteration", "LK"]
+        },
+        {
+          "id": "kathetensatz",
+          "title": "Kathetensatz",
+          "category": "geometry",
+          "topic": "Dreieck & Winkel",
+          "expression": "a² = p · c",
+          "explanation": "Im rechtwinkligen Dreieck ist das Quadrat einer Kathete gleich dem Produkt aus ihrer Hypotenusenprojektion und der Hypotenuse.",
+          "variables": [
+            { "symbol": "a", "name": "Kathete" },
+            { "symbol": "p", "name": "Projektion von a auf die Hypotenuse" },
+            { "symbol": "c", "name": "Hypotenuse" }
+          ],
+          "example": "c = 10 cm, p = 6 cm ⇒ a² = 60 cm² ⇒ a = √60 ≈ 7,75 cm",
+          "keywords": ["Kathete", "Projektion", "rechtwinklig", "Euklid"]
+        },
+        {
+          "id": "hoehensatz",
+          "title": "Höhensatz",
+          "category": "geometry",
+          "topic": "Dreieck & Winkel",
+          "expression": "h² = p · q",
+          "explanation": "Das Quadrat der Höhe über der Hypotenuse ist gleich dem Produkt der beiden Hypotenusenabschnitte.",
+          "variables": [
+            { "symbol": "h", "name": "Höhe auf die Hypotenuse" },
+            { "symbol": "p, q", "name": "Abschnitte der Hypotenuse" }
+          ],
+          "example": "p = 4 cm, q = 3 cm ⇒ h² = 12 cm² ⇒ h = √12 ≈ 3,46 cm",
+          "keywords": ["Höhe", "Hypotenusenabschnitt", "Euklid", "rechtwinklig"]
+        },
+        {
+          "id": "winkelsumme-dreieck",
+          "title": "Winkelsumme im Dreieck",
+          "category": "geometry",
+          "topic": "Dreieck & Winkel",
+          "expression": "α + β + γ = 180°",
+          "explanation": "Die Innenwinkel eines Dreiecks ergeben immer 180°.",
+          "variables": [
+            { "symbol": "α, β, γ", "name": "Innenwinkel des Dreiecks" }
+          ],
+          "example": "α = 50°, β = 60° ⇒ γ = 70°",
+          "keywords": ["Winkelsumme", "Dreieck", "Innenwinkel"]
+        },
+        {
+          "id": "winkelsumme-vieleck",
+          "title": "Winkelsumme im n-Eck",
+          "category": "geometry",
+          "topic": "Dreieck & Winkel",
+          "expression": "S = (n − 2) · 180°",
+          "explanation": "Ein n-Eck zerfällt in n − 2 Dreiecke – deren Winkelsummen ergeben die Winkelsumme des Polygons.",
+          "variables": [
+            { "symbol": "n", "name": "Anzahl der Seiten (n ≥ 3)" },
+            { "symbol": "S", "name": "Winkelsumme" }
+          ],
+          "example": "Sechseck (n = 6) ⇒ S = 4 · 180° = 720°",
+          "keywords": ["Winkelsumme", "Vieleck", "n-Eck", "Polygon"]
+        },
+        {
+          "id": "flaeche-trapez",
+          "title": "Fläche des Trapezes",
+          "category": "geometry",
+          "topic": "Flächen",
+          "expression": "A = (a + c)/2 · h",
+          "explanation": "Mittlere der beiden parallelseitigen Seiten (a und c) mal Höhe h.",
+          "variables": [
+            { "symbol": "a, c", "name": "parallele Seiten" },
+            { "symbol": "h", "name": "Höhe" }
+          ],
+          "example": "a = 8 cm, c = 4 cm, h = 3 cm ⇒ A = 6 · 3 = 18 cm²",
+          "keywords": ["Trapez", "Fläche", "parallel"]
+        },
+        {
+          "id": "flaeche-rhombus",
+          "title": "Fläche des Rhombus",
+          "category": "geometry",
+          "topic": "Flächen",
+          "expression": "A = (d₁ · d₂) / 2",
+          "explanation": "Die Diagonalen zerlegen den Rhombus in vier kongruente rechtwinklige Dreiecke.",
+          "variables": [
+            { "symbol": "d₁, d₂", "name": "Diagonalen" }
+          ],
+          "example": "d₁ = 6 cm, d₂ = 4 cm ⇒ A = 24/2 = 12 cm²",
+          "keywords": ["Raute", "Rhombus", "Diagonale", "Fläche"]
+        },
+        {
+          "id": "parallel-senkrecht",
+          "title": "Parallelität und Senkrechtigkeit von Geraden",
+          "category": "geometry",
+          "topic": "Geraden",
+          "expression": "parallel: m₁ = m₂   ·   senkrecht: m₁ · m₂ = −1",
+          "explanation": "Zwei Geraden y = m₁x + b₁ und y = m₂x + b₂ sind genau dann parallel bzw. senkrecht, wenn die Steigungen diese Bedingungen erfüllen (nicht für senkrechte Achsenparallele).",
+          "variables": [
+            { "symbol": "m₁, m₂", "name": "Steigungen der Geraden" }
+          ],
+          "example": "m₁ = 2 ⇒ senkrecht: m₂ = −1/2; parallel: m₂ = 2",
+          "keywords": ["Steigung", "parallel", "senkrecht", "Gerade"]
+        },
+        {
+          "id": "zentriwinkel",
+          "title": "Zentriwinkelsatz",
+          "category": "geometry",
+          "topic": "Kreis",
+          "expression": "μ = 2 · Φ",
+          "explanation": "Der Zentriwinkel μ im Mittelpunkt ist doppelt so groß wie jeder Umfangswinkel Φ über demselben Bogen; alle Umfangswinkel über einem Bogen sind gleich groß.",
+          "variables": [
+            { "symbol": "μ", "name": "Zentriwinkel (Scheitel im Mittelpunkt)" },
+            { "symbol": "Φ", "name": "Umfangswinkel (Scheitel auf dem Kreis)" }
+          ],
+          "example": "Umfangswinkel Φ = 35° ⇒ Zentriwinkel μ = 70°",
+          "details": [
+            {
+              "title": "Thales als Spezialfall",
+              "detail": "Über dem Durchmesser ist der Zentriwinkel 180°, also jeder Umfangswinkel 90°."
+            }
+          ],
+          "keywords": ["Kreis", "Zentriwinkel", "Umfangswinkel", "Peripherie"]
+        },
+        {
+          "id": "kreissektor",
+          "title": "Kreissektor",
+          "category": "geometry",
+          "topic": "Kreis",
+          "expression": "A = (α / 360°) · π · r²   ·   L = (α / 360°) · 2π · r",
+          "explanation": "Der Anteil α/360° des Vollkreises gilt für Fläche A und Bogenlänge L des Sektors.",
+          "variables": [
+            { "symbol": "α", "name": "Mittelpunktswinkel des Sektors" },
+            { "symbol": "r", "name": "Radius" }
+          ],
+          "example": "r = 6 cm, α = 90° ⇒ A = 1/4 · 36π ≈ 28,27 cm², L = 1/4 · 12π ≈ 9,42 cm",
+          "keywords": ["Kreissektor", "Kreisfläche", "Bogenlänge", "Mittelpunktswinkel"]
+        },
+        {
+          "id": "permutationen",
+          "title": "Permutationen",
+          "category": "stochastics",
+          "topic": "Kombinatorik",
+          "expression": "Pₙ = n!",
+          "explanation": "n Elemente lassen sich auf n! Arten anordnen – jedes Element wird genau einmal verwendet.",
+          "variables": [
+            { "symbol": "n", "name": "Anzahl der Elemente" }
+          ],
+          "example": "5 Bücher ⇒ 5! = 120 Anordnungen",
+          "keywords": ["Permutation", "Fakultät", "Anordnung", "Kombinatorik"]
+        },
+        {
+          "id": "variationen",
+          "title": "Variationen",
+          "category": "stochastics",
+          "topic": "Kombinatorik",
+          "expression": "mit Wiederholung: nᵏ   ·   ohne Wiederholung: n! / (n − k)!",
+          "explanation": "Bei Variationen zählt die Reihenfolge – mit Wiederholung darf jedes Element beliebig oft gewählt werden, ohne Wiederholung nicht.",
+          "variables": [
+            { "symbol": "n", "name": "Anzahl der zur Auswahl stehenden Elemente" },
+            { "symbol": "k", "name": "Anzahl der Wahlen" }
+          ],
+          "example": "Zifferncodes mit 4 Ziffern (0–9): 10⁴ = 10 000",
+          "keywords": ["Variation", "Reihenfolge", "Wiederholung", "Kombinatorik"]
+        },
+        {
+          "id": "unabhaengigkeit",
+          "title": "Unabhängige Ereignisse",
+          "category": "stochastics",
+          "topic": "Wahrscheinlichkeit",
+          "expression": "P(A ∩ B) = P(A) · P(B)",
+          "explanation": "Sind A und B unabhängig, verändert das Eintreten von A die Wahrscheinlichkeit von B nicht – dann multiplizieren sich die Einzelwahrscheinlichkeiten.",
+          "variables": [
+            { "symbol": "A, B", "name": "Ereignisse" }
+          ],
+          "example": "Münze zweimal werfen: P(Kopf ∩ Kopf) = 1/2 · 1/2 = 1/4",
+          "details": [
+            {
+              "title": "Ohne Unabhängigkeit",
+              "detail": "Dann gilt der allgemeine Multiplikationssatz: P(A ∩ B) = P(A) · P(B | A)."
+            }
+          ],
+          "keywords": ["unabhängig", "Multiplikationssatz", "Ereignis"]
+        },
+        {
+          "id": "hypergeometrisch",
+          "title": "Hypergeometrische Verteilung",
+          "category": "stochastics",
+          "topic": "Wahrscheinlichkeitsverteilungen",
+          "expression": "P(X = k) = C(K, k) · C(N − K, n − k) / C(N, n)",
+          "explanation": "Wahrscheinlichkeit für genau k Treffer beim Ziehen ohne Zurücklegen aus einer endlichen Menge.",
+          "variables": [
+            { "symbol": "N", "name": "Größe der Gesamtmenge" },
+            { "symbol": "K", "name": "Anzahl der Treffer darin" },
+            { "symbol": "n", "name": "Stichprobengröße" },
+            { "symbol": "k", "name": "gewünschte Trefferzahl" }
+          ],
+          "example": "10 Kugeln, davon 4 rot, 3 gezogen: P(X = 2) = C(4,2) · C(6,1) / C(10,3) = 36/120 = 0,3",
+          "details": [
+            {
+              "title": "Abgrenzung",
+              "detail": "Beim Ziehen mit Zurücklegen gilt stattdessen die Binomialverteilung."
+            }
+          ],
+          "keywords": ["Hypergeometrie", "ohne Zurücklegen", "Stichprobe", "Verteilung", "LK"]
+        },
+        {
+          "id": "stichproben-varianz",
+          "title": "Empirische Varianz (Stichprobe)",
+          "category": "stochastics",
+          "topic": "Deskriptive Statistik",
+          "expression": "s² = 1/(n − 1) · Σ (xᵢ − x̄)²",
+          "explanation": "Streuung einer Stichprobe um ihren Mittelwert; die Division durch n − 1 macht s² zu einem erwartungstreuen Schätzer für die Populationsvarianz σ².",
+          "variables": [
+            { "symbol": "x̄", "name": "Mittelwert der Stichprobe" },
+            { "symbol": "n", "name": "Stichprobengröße" },
+            { "symbol": "xᵢ", "name": "ein einzelner Messwert" }
+          ],
+          "example": "Werte 2, 4, 6: x̄ = 4 ⇒ s² = (4 + 0 + 4)/2 = 4, also s = 2",
+          "keywords": ["Varianz", "Stichprobe", "Streuung", "s²", "Statistik"]
+        }
+      ]
+    },
+    {
+      "id": "physik-grundlagen",
+      "title": "Physik – Grundlagen",
+      "subject": "Physik",
+      "version": "2026.11",
+      "notes": [
+        {
+          "title": "Beispiel-Fach",
+          "text": "Zweites Fach als Beispiel: eigenes Pack mit eigener Kategorie – so erweitert man das Manifest um weitere Fächer."
+        }
+      ],
+      "categories": [
+        { "id": "physik", "title": "Physik", "subtitle": "Mechanik", "symbol": "atom", "colorIndex": 4 }
+      ],
+      "formulas": [
+        {
+          "id": "kraft-masse-beschleunigung",
+          "title": "Kraft, Masse und Beschleunigung",
+          "category": "physik",
+          "topic": "Dynamik",
+          "expression": "F = m · a",
+          "explanation": "Die auf einen Körper wirkende Kraft ist gleich dem Produkt aus Masse und Beschleunigung; die Beschleunigung zeigt in Richtung der Kraft.",
+          "variables": [
+            { "symbol": "F", "name": "Kraft in N" },
+            { "symbol": "m", "name": "Masse in kg" },
+            { "symbol": "a", "name": "Beschleunigung in m/s²" }
+          ],
+          "example": "m = 2 kg, a = 3 m/s² ⇒ F = 6 N",
+          "keywords": ["Newton", "Kraft", "Beschleunigung", "Mechanik"]
+        },
+        {
+          "id": "gleichmaessige-beschleunigung",
+          "title": "Gleichmäßig beschleunigte Bewegung",
+          "category": "physik",
+          "topic": "Kinematik",
+          "expression": "v(t) = v₀ + a · t   ·   s(t) = v₀ · t + (a/2) · t²",
+          "explanation": "Bei konstanter Beschleunigung wächst die Geschwindigkeit linear mit der Zeit; der zurückgelegte Weg ist eine quadratische Funktion der Zeit.",
+          "variables": [
+            { "symbol": "v₀", "name": "Anfangsgeschwindigkeit in m/s" },
+            { "symbol": "a", "name": "Beschleunigung in m/s²" },
+            { "symbol": "t", "name": "Zeit in s" }
+          ],
+          "example": "v₀ = 0, a = 2 m/s², t = 4 s ⇒ v = 8 m/s und s = 16 m",
+          "keywords": ["Kinematik", "Geschwindigkeit", "Weg", "Beschleunigung"]
+        },
+        {
+          "id": "kinetische-energie",
+          "title": "Kinetische Energie",
+          "category": "physik",
+          "topic": "Energetik",
+          "expression": "E_kin = ½ · m · v²",
+          "explanation": "Die Bewegungsenergie eines Körpers wächst mit der Masse und mit dem Quadrat der Geschwindigkeit.",
+          "variables": [
+            { "symbol": "m", "name": "Masse in kg" },
+            { "symbol": "v", "name": "Geschwindigkeit in m/s" }
+          ],
+          "example": "m = 2 kg, v = 3 m/s ⇒ E_kin = ½ · 2 · 9 = 9 J",
+          "keywords": ["Energie", "Bewegungsenergie", "Joule", "Mechanik"]
         }
       ]
     }
